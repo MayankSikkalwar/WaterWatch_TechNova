@@ -29,7 +29,9 @@ const MapView = () => {
         <div style={{
           width: '100%', 
           height: '100%', 
-          background: 'linear-gradient(45deg, #0f172a, #1e293b)', 
+          background: 'var(--bg-card)', 
+          border: '1px solid var(--border-light)',
+          borderRadius: '12px',
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center'

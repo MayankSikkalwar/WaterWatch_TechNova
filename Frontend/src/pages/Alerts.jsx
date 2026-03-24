@@ -31,7 +31,7 @@ const Alerts = () => {
           }}>
             <div style={{
               width: '40px', height: '40px', borderRadius: '50%', 
-              background: 'rgba(255,255,255,0.05)', 
+              background: 'var(--border-light)', 
               display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
               {alert.icon || <Info size={20} />}

@@ -1,21 +1,26 @@
 import React from 'react';
 import { useAppContext } from '../../context/AppContext';
-import { Menu, Bell, Settings } from 'lucide-react';
+import { Menu, Bell, Settings, Search } from 'lucide-react';
+import ThemeToggle from '../ThemeToggle';
 
 const Navbar = () => {
   const { toggleSidebar } = useAppContext();
 
   return (
     <nav className="navbar">
-      <div style={{display: 'flex', alignItems: 'center', gap: '20px', flex: 1}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: '24px', flex: 1}}>
         <Menu 
           size={24} 
           style={{cursor: 'pointer', color: 'var(--text-muted)'}} 
           onClick={toggleSidebar} 
         />
-        <div style={{display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', fontWeight: '700', fontSize: '1.25rem'}}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
-          WaterWatch
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: '12px', 
+          background: 'var(--bg-dark)', padding: '10px 16px', borderRadius: '12px',
+          width: '320px', border: '1px solid var(--border-light)'
+        }}>
+          <Search size={18} color="var(--text-muted)" />
+          <input type="text" placeholder="Search" style={{border: 'none', background: 'transparent', outline: 'none', color: 'var(--text-main)', width: '100%', fontSize: '0.9rem'}} />
         </div>
       </div>
 
@@ -34,21 +39,24 @@ const Navbar = () => {
         </span>
       </div>
 
-      <div className="profile-section" style={{flex: 1, justifyContent: 'flex-end'}}>
-        <div style={{position: 'relative', cursor: 'pointer', color: 'var(--text-muted)'}}>
+      <div className="profile-section" style={{flex: 1, justifyContent: 'flex-end', gap: '16px'}}>
+        <ThemeToggle />
+        <div style={{position: 'relative', cursor: 'pointer', color: 'var(--text-muted)', display: 'flex', alignItems: 'center'}}>
           <Bell size={20} />
           <span style={{
             position: 'absolute', 
-            top: '-4px', 
-            right: '-4px', 
+            top: '-2px', 
+            right: '-2px', 
             background: 'var(--danger)', 
             width: '10px', 
             height: '10px', 
             borderRadius: '50%',
-            border: '2px solid var(--bg-dark)'
+            border: '2px solid var(--bg-surface)'
           }}></span>
         </div>
-        <Settings size={20} style={{cursor: 'pointer', color: 'var(--text-muted)'}} />
+        <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', color: 'var(--text-muted)'}}>
+          <Settings size={20} />
+        </div>
         <div className="avatar">AD</div>
       </div>
     </nav>

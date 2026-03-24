@@ -17,7 +17,7 @@ const Sidebar = () => {
     <aside className={`sidebar ${!sidebarOpen ? 'collapsed' : ''}`}>
       <div className="sidebar-header">
         <Droplet className="sidebar-logo-icon" size={28} />
-        {sidebarOpen && <h2 className="logo-text" style={{fontSize: '1.25rem', fontWeight: '700', color: '#fff'}}>WaterWatch</h2>}
+        {sidebarOpen && <h2 className="logo-text" style={{fontSize: '1.25rem', fontWeight: '700', color: '#ffffff'}}>WaterWatch</h2>}
       </div>
       
       <div className="sidebar-nav">

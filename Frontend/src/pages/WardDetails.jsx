@@ -12,7 +12,7 @@ const CauseItem = ({ title, probability, description, icon }) => (
     display: 'flex',
     gap: '16px',
     alignItems: 'flex-start',
-    background: 'rgba(255,255,255,0.02)'
+    background: 'var(--bg-card)'
   }}>
     <div style={{padding: '10px', background: 'rgba(14, 165, 233, 0.1)', color: 'var(--primary)', borderRadius: '8px'}}>
       {icon}
